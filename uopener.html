@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL 열기 도구</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script>
+        // 다크 모드 상태를 로컬 스토리지에서 확인 후 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <nav class="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse bg-black dark:bg-white p-2 rounded-lg transition-colors">
+                <img src="./image_fx_.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">Marudo</span>
+            </a>
+            <div id="dark-mode-toggle" class="dark-mode-toggle">
+                <img id="dark-mode-img" src="light-mode.png" alt="Toggle Dark Mode" width="30px" />
+            </div>
+        </div>
+    </nav>
+    <hr>
+
+    <div class="container mx-auto max-w-screen-lg p-6">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">URL 열기 도구</h1>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">이 도구는 한 번에 여러 URL을 새 창으로 열 수 있도록 도와줍니다. 브라우저에서 안전하게 사용하세요!</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">URL을 입력하세요 (한 줄에 하나씩):</p>
+        <textarea id="urlInput" placeholder="http://example.com&#13;&#10;http://another.com" class="w-full h-80 p-2 border rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-white"></textarea>
+        <button id="openUrls" class="mt-4 px-6 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600 transition-colors dark:bg-blue-700 dark:hover:bg-blue-800">URL 열기</button>
+    </div>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeImg = document.getElementById('dark-mode-img');
+
+        // 다크 모드 토글 이벤트
+        darkModeToggle.addEventListener('click', () => {
+            const htmlElement = document.documentElement;
+
+            // 다크 모드 클래스 추가/제거
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light'); // 라이트 모드로 전환
+                darkModeImg.src = 'light-mode.png'; // 라이트 모드 아이콘
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark'); // 다크 모드로 전환
+                darkModeImg.src = 'night-mode.png'; // 다크 모드 아이콘
+            }
+        });
+
+        document.getElementById('openUrls').addEventListener('click', function () {
+            const urls = document.getElementById('urlInput').value.split(/\s+/);
+            urls.forEach(url => {
+                if (url.trim()) {
+                    const fullUrl = url.startsWith('http') ? url : `http://${url}`;
+                    window.open(fullUrl, '_blank');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
