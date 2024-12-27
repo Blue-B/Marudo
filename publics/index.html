@@ -17,9 +17,10 @@
             }
         });
     </script>
+
 </head>
 <body class="bg-white dark:bg-gray-900">
-    <nav class=" border-gray-200">
+    <!-- <nav class=" border-gray-200">
         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse bg-black dark:bg-white  p-2 rounded-lg transition-colors">
                 <img src="./image_fx_.svg" class="h-8" alt="Flowbite Logo" />
@@ -38,22 +39,23 @@
                         <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">FAQ</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Terms of Use</a>
+                        <a href="./privacy.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">개인정보 처리방침</a>
                     </li>
                     <li>
                         <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                     </li>
                     <li>
-                        <!-- 다크 모드 토글 버튼 -->
+                         다크 모드 토글 버튼 
                         <div id="dark-mode-toggle" class="dark-mode-toggle">
-                            <!-- 기본 라이트 모드 이미지 -->
+                            기본 라이트 모드 이미지 
                             <img id="dark-mode-img" src="light-mode.png" alt="Toggle Dark Mode" width="30px" />
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <div id="nav-placeholder"></div>
     <hr>
 
         <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 bg-white dark:bg-gray-900 dark:text-white sm:grid-cols-2 md:px-6">
@@ -100,6 +102,13 @@
             </ul>
     </div>
     <hr>
+
+    <script>
+    $(function(){
+      $("#nav-placeholder").load("nav.html");
+    });
+    </script>
+      
     
     <script>
         const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -120,6 +129,7 @@
                 darkModeImg.src = 'night-mode.png'; // 라이트 모드로 전환 아이콘
             }
         });
+        
     </script>
 </body>
 </html>

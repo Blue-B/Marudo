@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marudo - Privacy Policy</title>
+  <!-- Flowbite CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+  <!-- 다크 모드 상태를 로컬 스토리지에서 확인 후 초기화 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+  <!-- 상단 네비게이션 바 -->
+  <nav class="border-gray-200">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+      <!-- 로고 및 사이트명 -->
+      <a
+        href="#"
+        class="flex items-center space-x-3 rtl:space-x-reverse bg-black dark:bg-white p-2 rounded-lg transition-colors"
+      >
+        <img
+          src="./image_fx_.svg"
+          class="h-8"
+          alt="Marudo Logo"
+        />
+        <span
+          class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black"
+          >Marudo</span
+        >
+      </a>
+
+      <!-- 메뉴 항목들 -->
+      <div
+        id="mega-menu-full"
+        class="items-center justify-between font-medium hidden w-full md:flex md:w-auto md:order-1"
+      >
+        <ul
+          class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50
+                 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0
+                 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+        >
+          <li>
+            <a
+              href="#"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100
+                     md:hover:bg-transparent md:hover:text-blue-700 md:p-0
+                     dark:text-white md:dark:hover:text-blue-500
+                     dark:hover:bg-gray-700 dark:hover:text-blue-500
+                     md:dark:hover:bg-transparent dark:border-gray-700"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100
+                     md:hover:bg-transparent md:hover:text-blue-700 md:p-0
+                     dark:text-white md:dark:hover:text-blue-500
+                     dark:hover:bg-gray-700 dark:hover:text-blue-500
+                     md:dark:hover:bg-transparent dark:border-gray-700"
+              >News</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100
+                     md:hover:bg-transparent md:hover:text-blue-700 md:p-0
+                     dark:text-white md:dark:hover:text-blue-500
+                     dark:hover:bg-gray-700 dark:hover:text-blue-500
+                     md:dark:hover:bg-transparent dark:border-gray-700"
+              >FAQ</a
+            >
+          </li>
+          <li>
+            <!-- 기존 Terms of Use 링크 대신 Privacy Policy 링크를 활성화해도 좋습니다 -->
+            <a
+              href="#"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100
+                     md:hover:bg-transparent md:hover:text-blue-700 md:p-0
+                     dark:text-white md:dark:hover:text-blue-500
+                     dark:hover:bg-gray-700 dark:hover:text-blue-500
+                     md:dark:hover:bg-transparent dark:border-gray-700"
+              >Terms of Use</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100
+                     md:hover:bg-transparent md:hover:text-blue-700 md:p-0
+                     dark:text-white md:dark:hover:text-blue-500
+                     dark:hover:bg-gray-700 dark:hover:text-blue-500
+                     md:dark:hover:bg-transparent dark:border-gray-700"
+              >Contact</a
+            >
+          </li>
+          <!-- 다크모드 토글 버튼 -->
+          <li>
+            <div id="dark-mode-toggle" class="dark-mode-toggle">
+              <img
+                id="dark-mode-img"
+                src="light-mode.png"
+                alt="Toggle Dark Mode"
+                width="30px"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <hr />
+
+  <!-- 메인 콘텐츠 영역 (개인정보 처리방침) -->
+  <div
+    class="max-w-screen-xl px-4 py-8 mx-auto text-gray-900 bg-white
+           dark:bg-gray-900 dark:text-white md:px-6"
+  >
+    <h1 class="text-3xl font-bold mb-6">개인정보 처리방침 (Privacy Policy)</h1>
+    <p class="mb-6 text-gray-500 dark:text-gray-400">
+      본 개인정보 처리방침은 Marudo(이하 "당사")에서 제공되는 사이트 및 서비스를
+      이용할 때 적용됩니다. 당사는 이용자의 개인정보를 보호하고, 관련 법령을
+      준수하기 위해 아래와 같은 정책을 운영합니다.  
+      <br /><br />
+      ※ 이하 예시 내용이며, 실제 서비스에 맞춰 수정/보완하시기 바랍니다.
+    </p>
+
+    <!-- 1. 총칙 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">1. 총칙</h2>
+      <p class="text-gray-500 dark:text-gray-400">
+        본 방침은 이용자가 당사의 웹사이트에 접속하고 서비스를 이용함에 있어,
+        이용자의 개인정보가 어떠한 방식과 목적으로 수집·이용·보관·처리되는지
+        안내합니다. 당사는 개인정보 보호법, 정보통신망법 등 관계 법령을
+        준수하며, 본 정책에 따라 이용자의 정보를 안전하게 보호합니다.
+      </p>
+    </section>
+
+    <!-- 2. 수집하는 개인정보의 항목 및 수집 방법 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">
+        2. 수집하는 개인정보의 항목 및 수집 방법
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">
+        당사는 서비스 이용, 문의 접수 등의 과정에서 아래와 같은 개인정보를
+        수집할 수 있습니다.
+      </p>
+      <ul class="list-disc pl-5 text-gray-500 dark:text-gray-400 space-y-2">
+        <li>필수정보: 이름, 이메일 주소 등</li>
+        <li>선택정보: 연락처, 지역, 서비스 이용 기록 등</li>
+        <li>자동수집: 접속 IP, 쿠키, 방문 일시, 브라우저 정보 등</li>
+      </ul>
+    </section>
+
+    <!-- 3. 개인정보의 수집·이용 목적 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">
+        3. 개인정보의 수집·이용 목적
+      </h2>
+      <ul class="list-disc pl-5 text-gray-500 dark:text-gray-400 space-y-2">
+        <li>회원 관리: 이용자 식별, 문의/민원 처리 등</li>
+        <li>서비스 제공: 맞춤형 서비스, 콘텐츠 제공 등</li>
+        <li>마케팅: 이벤트 및 프로모션 안내 (사전 동의 시)</li>
+        <li>보안 및 서비스 품질 개선: 로그분석, 통계</li>
+      </ul>
+    </section>
+
+    <!-- 4. 쿠키(Cookies)의 사용 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">4. 쿠키(Cookies)의 사용</h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">
+        당사는 이용자에게 개인화되고 맞춤화된 서비스를 제공하기 위해 쿠키를
+        사용할 수 있습니다. 이용자는 브라우저 설정을 통해 쿠키 저장을 거부하거나
+        삭제할 수 있습니다.
+      </p>
+      <ul class="list-disc pl-5 text-gray-500 dark:text-gray-400 space-y-2">
+        <li>쿠키란? 웹사이트가 이용자의 브라우저에 보내는 작은 데이터 파일</li>
+        <li>사용 목적: 자동 로그인, 환경설정 유지, 맞춤형 서비스 제공</li>
+      </ul>
+    </section>
+
+    <!-- 5. 개인정보의 보유 및 파기 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">
+        5. 개인정보의 보유 및 파기
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400">
+        당사는 이용자의 개인정보를 원칙적으로 수집·이용목적이 달성된 후 지체 없이
+        파기합니다. 단, 관계 법령에서 일정 기간 보관 의무가 규정된 경우 해당
+        기간 동안 안전하게 보관합니다.
+      </p>
+    </section>
+
+    <!-- 6. 이용자의 권리 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">6. 이용자의 권리</h2>
+      <p class="text-gray-500 dark:text-gray-400">
+        이용자는 언제든지 자신의 개인정보를 조회, 수정, 삭제, 처리정지 요청할 수
+        있습니다. 구체적인 절차는 '마이페이지' 또는 고객센터를 통해 안내됩니다.
+      </p>
+    </section>
+
+    <!-- 7. 기타 -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-2">7. 기타</h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-4">
+        본 방침은 법령 및 내부 운영방침의 변경에 따라 개정될 수 있습니다.
+        개인정보 처리방침을 개정하는 경우, 당사는 웹사이트 내 공지사항 등을 통해
+        이용자에게 안내합니다.
+      </p>
+      <p class="text-gray-500 dark:text-gray-400">
+        본 정책과 관련된 문의는 아래 이메일로 연락해주시기 바랍니다.<br />
+        <strong>Email:</strong> contact@marudo.com
+      </p>
+    </section>
+  </div>
+  <hr />
+
+  <!-- 다크 모드 토글 스크립트 -->
+  <script>
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const darkModeImg = document.getElementById("dark-mode-img");
+
+    darkModeToggle.addEventListener("click", () => {
+      const htmlElement = document.documentElement;
+
+      if (htmlElement.classList.contains("dark")) {
+        htmlElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+        darkModeImg.src = "light-mode.png"; // 라이트 모드 아이콘
+      } else {
+        htmlElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        darkModeImg.src = "night-mode.png"; // 다크 모드 아이콘
+      }
+    });
+  </script>
+</body>
+</html>
