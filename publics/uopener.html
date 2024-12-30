@@ -18,17 +18,7 @@
     </script>
 </head>
 <body class="bg-white dark:bg-gray-900">
-    <nav class="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900">
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse bg-black dark:bg-white p-2 rounded-lg transition-colors">
-                <img src="./image_fx_.svg" class="h-8" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">Marudo</span>
-            </a>
-            <div id="dark-mode-toggle" class="dark-mode-toggle">
-                <img id="dark-mode-img" src="light-mode.png" alt="Toggle Dark Mode" width="30px" />
-            </div>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
     <hr>
 
     <div class="container mx-auto max-w-screen-lg p-6">
@@ -40,6 +30,37 @@
     </div>
 
     <script>
+        // const darkModeToggle = document.getElementById('dark-mode-toggle');
+        // const darkModeImg = document.getElementById('dark-mode-img');
+
+        // // 다크 모드 토글 이벤트
+        // darkModeToggle.addEventListener('click', () => {
+        //     const htmlElement = document.documentElement;
+
+        //     // 다크 모드 클래스 추가/제거
+        //     if (htmlElement.classList.contains('dark')) {
+        //         htmlElement.classList.remove('dark');
+        //         localStorage.setItem('theme', 'light'); // 라이트 모드로 전환
+        //         darkModeImg.src = 'light-mode.png'; // 라이트 모드 아이콘
+        //     } else {
+        //         htmlElement.classList.add('dark');
+        //         localStorage.setItem('theme', 'dark'); // 다크 모드로 전환
+        //         darkModeImg.src = 'night-mode.png'; // 다크 모드 아이콘
+        //     }
+        // });
+
+        // document.getElementById('openUrls').addEventListener('click', function () {
+        //     const urls = document.getElementById('urlInput').value.split(/\s+/);
+        //     urls.forEach(url => {
+        //         if (url.trim()) {
+        //             const fullUrl = url.startsWith('http') ? url : `http://${url}`;
+        //             window.open(fullUrl, '_blank');
+        //         }
+        //     });
+        // });
+
+$(function () {
+    $("#nav-placeholder").load("./publics/nav.html", function () {
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         const darkModeImg = document.getElementById('dark-mode-img');
 
@@ -47,27 +68,18 @@
         darkModeToggle.addEventListener('click', () => {
             const htmlElement = document.documentElement;
 
-            // 다크 모드 클래스 추가/제거
             if (htmlElement.classList.contains('dark')) {
                 htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light'); // 라이트 모드로 전환
-                darkModeImg.src = 'light-mode.png'; // 라이트 모드 아이콘
+                localStorage.setItem('theme', 'light');
+                darkModeImg.src = './images/light-mode.png'; // 라이트 모드 아이콘
             } else {
                 htmlElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark'); // 다크 모드로 전환
-                darkModeImg.src = 'night-mode.png'; // 다크 모드 아이콘
+                localStorage.setItem('theme', 'dark');
+                darkModeImg.src = './images/night-mode.png'; // 다크 모드 아이콘
             }
         });
-
-        document.getElementById('openUrls').addEventListener('click', function () {
-            const urls = document.getElementById('urlInput').value.split(/\s+/);
-            urls.forEach(url => {
-                if (url.trim()) {
-                    const fullUrl = url.startsWith('http') ? url : `http://${url}`;
-                    window.open(fullUrl, '_blank');
-                }
-            });
-        });
+    });
+});
     </script>
 </body>
 </html>
