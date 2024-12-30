@@ -77,6 +77,8 @@
       
     
     <script>
+   $(function () {
+    $("#nav-placeholder").load("./publics/nav.html", function () {
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         const darkModeImg = document.getElementById('dark-mode-img');
 
@@ -84,17 +86,19 @@
         darkModeToggle.addEventListener('click', () => {
             const htmlElement = document.documentElement;
 
-            // 다크 모드 클래스 추가/제거
             if (htmlElement.classList.contains('dark')) {
                 htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light'); // 라이트 모드로 전환
-                darkModeImg.src = './images/light-mode.png'; // 다크 모드로 전환 아이콘
+                localStorage.setItem('theme', 'light');
+                darkModeImg.src = './images/light-mode.png'; // 라이트 모드 아이콘
             } else {
                 htmlElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark'); // 다크 모드로 전환
-                darkModeImg.src = './images/night-mode.png'; // 라이트 모드로 전환 아이콘
+                localStorage.setItem('theme', 'dark');
+                darkModeImg.src = './images/night-mode.png'; // 다크 모드 아이콘
             }
         });
+    });
+});
+
         
     </script>
 </body>
