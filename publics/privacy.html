@@ -143,11 +143,11 @@ $(function () {
             if (htmlElement.classList.contains('dark')) {
                 htmlElement.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
-                darkModeImg.src = './images/light-mode.png'; // 라이트 모드 아이콘
+                darkModeImg.src = '/Marudo/images/light-mode.png'; // 라이트 모드 아이콘
             } else {
                 htmlElement.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
-                darkModeImg.src = './images/night-mode.png'; // 다크 모드 아이콘
+                darkModeImg.src = '/Marudo/images/night-mode.png'; // 다크 모드 아이콘
             }
         });
     });
