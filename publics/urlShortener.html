@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL 열기 도구</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!--j쿼리사용-->
+    <script>
+        // 다크 모드 상태를 로컬 스토리지에서 확인 후 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <div id="nav-placeholder"></div>
+    <hr>
+
+    <div class="container mx-auto max-w-screen-lg p-6">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">URL 단축 도구</h1>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">이 도구는 긴 URL을 단축하여 짧은 주소로 편리하게 이용할 수 있습니다.</p>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">URL을 입력하세요:</p>
+
+        <form id="urlShortener">
+            <label for="longUrl">URL입력</label>
+            <input type="url" id="longUrl" name="longUrl" required><br>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">URL단축</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+
+$(function () {
+    $("#nav-placeholder").load("nav.html", function () {
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeImg = document.getElementById('dark-mode-img');
+
+        // 다크 모드 토글 이벤트
+        darkModeToggle.addEventListener('click', () => {
+            const htmlElement = document.documentElement;
+
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                darkModeImg.src = '/Marudo/images/light-mode.png'; // 라이트 모드 아이콘
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                darkModeImg.src = '/Marudo/images/night-mode.png'; // 다크 모드 아이콘
+            }
+        });
+    });
+});
+    </script>
+    <script src="./js/urlShortenr.js.js"></script>
+</body>
+</html>
