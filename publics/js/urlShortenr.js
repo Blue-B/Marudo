@@ -1,19 +1,21 @@
-// script.js
-document.getElementById('urlShortener').addEventListener('submit', async function(event) {
+document.getElementById('urlShortener').addEventListener('submit', function(event) {
     event.preventDefault();
     
     const longUrl = document.getElementById('longUrl').value;
     
-    try {
-        const response = await fetch(`/shorten-url?longUrl=${encodeURIComponent(longUrl)}`);
-        const data = await response.json();
-        
-        if (data.shortUrl) {
-            document.getElementById('result').innerHTML = `<p>단축된 URL: <a href="${data.shortUrl}" target="_blank">${data.shortUrl}</a></p>`;
+    const script = document.createElement('script');
+    script.src = `https://is.gd/create.php?format=json&callback=handleResponse&url=${encodeURIComponent(longUrl)}`;
+    document.body.appendChild(script);
+
+    // 글로벌 스코프에 함수 정의
+    window.handleResponse = function(data) {
+        if (data.shorturl) {
+            document.getElementById('result').innerHTML = `<p>단축된 URL: <a href="${data.shorturl}" target="_blank">${data.shorturl}</a></p>`;
         } else {
-            document.getElementById('result').innerHTML = `<p>오류: ${data.error}</p>`;
+            document.getElementById('result').innerHTML = `<p>오류: ${data.errormsg}</p>`;
         }
-    } catch (error) {
-        document.getElementById('result').innerHTML = `<p>오류: ${error.message}</p>`;
-    }
+        // 콜백 함수 사용 후 삭제
+        delete window.handleResponse;
+        document.body.removeChild(script);
+    };
 });
